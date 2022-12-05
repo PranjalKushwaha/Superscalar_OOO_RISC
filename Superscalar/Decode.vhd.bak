@@ -1,0 +1,95 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.math_real.all;
+use ieee.numeric_std.all;
+use IEEE.STD_LOGIC_UNSIGNED.ALL; 
+
+entity InsDecode is
+   port(
+		clk: in std_logic;
+		rst: in std_logic;
+		loading_mem : in std_logic; -- 1 if memory loading is in progress
+		id_freeze : in std_logic ;
+		instruction : in std_logic_vector(15 downto 0) ;
+		rf_d1, rf_d2: in std_logic_vector(15 downto 0) ;
+		rf_a1, rf_a2 : out std_logic_vector(2 downto 0);
+		pr_se6,pr_se9: out std_logic_vector(15 downto 0);
+		pr_d1,pr_d2 : out std_logic_vector(15 downto 0);
+		pr_ins : out std_logic_vector(3 downto 0);
+		pr_r3 : out std_logic_vector(2 downto 0);
+		pr_ins_flag : out std_logic_vector(1 downto 0);
+		ins_pc : in std_logic_vector(5 downto 0);  -- need to pass the current instruction's pc to the exec unit.
+		pr_pc : out std_logic_vector(5 downto 0)
+	  ) ;
+end entity ;
+
+architecture id_arch of InsDecode is
+   
+  component SE6 is
+	port(
+		input: in std_logic_vector(5 downto 0);
+		output: out std_logic_vector(15 downto 0)
+	  );
+    end component;
+	 
+	 component SE9 is
+	port(
+		input: in std_logic_vector(8 downto 0);
+		output: out std_logic_vector(15 downto 0)
+	  );
+    end component;
+	
+  signal cycle,next_cycle : std_logic ;	
+  signal bit6 : std_logic_vector(5 downto 0);
+  signal bit9 : std_logic_vector(8 downto 0);
+  signal bit6_16 : std_logic_vector(15 downto 0);
+  signal bit9_16 : std_logic_vector(15 downto 0);
+  
+  begin
+  
+  se6_comp: SE6
+	   port map(bit6,bit6_16);
+		
+	se9_comp: SE9
+	   port map(bit9,bit9_16);
+		
+  process(clk)		
+	begin
+		if loading_mem = '0' then  --freeze processor execution till memory is loaded
+			if rising_edge(clk) then
+				if rst = '1' then
+					cycle <= '0' ;
+
+				else
+					cycle  <= next_cycle ;
+				end if;
+			end if;
+		end if;
+	end process;
+	
+	process(cycle,loading_mem)
+	  begin
+	    if (loading_mem = '0' and rst = '0' and id_freeze = '0') then  --freeze processor execution till memory is loaded
+	       if cycle = '0' then
+		      rf_a1 <= instruction(5 downto 3) ;
+			   rf_a2 <= instruction(8 downto 6) ;
+			   bit6  <= instruction(5 downto 0) ;
+			   bit9  <= instruction(8 downto 0) ;
+				pr_se6 <= bit6_16 ;
+			   pr_se9 <= bit9_16 ;
+				pr_ins <= instruction(15 downto 12);
+				pr_r3 <= instruction(11 downto 9);
+				pr_ins_flag <= instruction(1 downto 0);
+				pr_pc <= ins_pc;
+			   next_cycle <= '1' ;
+		    elsif cycle = '1' then
+		      pr_d1 <= rf_d1 ;
+			   pr_d2 <= rf_d2 ;
+				next_cycle <= '0' ;
+		   end if;
+		 else
+		   next_cycle <= '0'  ;
+		 end if;
+	  end process;
+	
+  end architecture;

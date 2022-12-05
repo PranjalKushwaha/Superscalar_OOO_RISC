@@ -1,0 +1,310 @@
+// Copyright (C) 2020  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
+// and other software and tools, and any partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel FPGA IP License Agreement, or other applicable license
+// agreement, including, without limitation, that your use is for
+// the sole purpose of programming logic devices manufactured by
+// Intel and sold by Intel or its authorized distributors.  Please
+// refer to the applicable agreement for further details, at
+// https://fpgasoftware.intel.com/eula.
+
+// VENDOR "Altera"
+// PROGRAM "Quartus Prime"
+// VERSION "Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
+
+// DATE "12/05/2022 16:55:13"
+
+// 
+// Device: Altera 5M40ZE64C4 Package EQFP64
+// 
+
+// 
+// This Verilog file should be used for ModelSim-Altera (Verilog) only
+// 
+
+`timescale 1 ps/ 1 ps
+
+module Superscalar (
+	clk,
+	rst,
+	data_loading,
+	data_mem_address,
+	data);
+input 	clk;
+input 	rst;
+input 	data_loading;
+input 	[5:0] data_mem_address;
+input 	[15:0] data;
+
+// Design Ports Information
+
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+tri1 devclrn;
+tri1 devpor;
+tri1 devoe;
+
+
+// Location: PIN_2,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+maxv_io \clk~I (
+	.datain(gnd),
+	.oe(gnd),
+	.combout(),
+	.padio(clk));
+// synopsys translate_off
+defparam \clk~I .operation_mode = "input";
+// synopsys translate_on
+
+// Location: PIN_1,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+maxv_io \rst~I (
+	.datain(gnd),
+	.oe(gnd),
+	.combout(),
+	.padio(rst));
+// synopsys translate_off
+defparam \rst~I .operation_mode = "input";
+// synopsys translate_on
+
+// Location: PIN_53,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+maxv_io \data_loading~I (
+	.datain(gnd),
+	.oe(gnd),
+	.combout(),
+	.padio(data_loading));
+// synopsys translate_off
+defparam \data_loading~I .operation_mode = "input";
+// synopsys translate_on
+
+// Location: PIN_9,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+maxv_io \data_mem_address[0]~I (
+	.datain(gnd),
+	.oe(gnd),
+	.combout(),
+	.padio(data_mem_address[0]));
+// synopsys translate_off
+defparam \data_mem_address[0]~I .operation_mode = "input";
+// synopsys translate_on
+
+// Location: PIN_34,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+maxv_io \data_mem_address[1]~I (
+	.datain(gnd),
+	.oe(gnd),
+	.combout(),
+	.padio(data_mem_address[1]));
+// synopsys translate_off
+defparam \data_mem_address[1]~I .operation_mode = "input";
+// synopsys translate_on
+
+// Location: PIN_11,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+maxv_io \data_mem_address[2]~I (
+	.datain(gnd),
+	.oe(gnd),
+	.combout(),
+	.padio(data_mem_address[2]));
+// synopsys translate_off
+defparam \data_mem_address[2]~I .operation_mode = "input";
+// synopsys translate_on
+
+// Location: PIN_61,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+maxv_io \data_mem_address[3]~I (
+	.datain(gnd),
+	.oe(gnd),
+	.combout(),
+	.padio(data_mem_address[3]));
+// synopsys translate_off
+defparam \data_mem_address[3]~I .operation_mode = "input";
+// synopsys translate_on
+
+// Location: PIN_35,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+maxv_io \data_mem_address[4]~I (
+	.datain(gnd),
+	.oe(gnd),
+	.combout(),
+	.padio(data_mem_address[4]));
+// synopsys translate_off
+defparam \data_mem_address[4]~I .operation_mode = "input";
+// synopsys translate_on
+
+// Location: PIN_25,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+maxv_io \data_mem_address[5]~I (
+	.datain(gnd),
+	.oe(gnd),
+	.combout(),
+	.padio(data_mem_address[5]));
+// synopsys translate_off
+defparam \data_mem_address[5]~I .operation_mode = "input";
+// synopsys translate_on
+
+// Location: PIN_27,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+maxv_io \data[0]~I (
+	.datain(gnd),
+	.oe(gnd),
+	.combout(),
+	.padio(data[0]));
+// synopsys translate_off
+defparam \data[0]~I .operation_mode = "input";
+// synopsys translate_on
+
+// Location: PIN_32,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+maxv_io \data[1]~I (
+	.datain(gnd),
+	.oe(gnd),
+	.combout(),
+	.padio(data[1]));
+// synopsys translate_off
+defparam \data[1]~I .operation_mode = "input";
+// synopsys translate_on
+
+// Location: PIN_38,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+maxv_io \data[2]~I (
+	.datain(gnd),
+	.oe(gnd),
+	.combout(),
+	.padio(data[2]));
+// synopsys translate_off
+defparam \data[2]~I .operation_mode = "input";
+// synopsys translate_on
+
+// Location: PIN_18,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+maxv_io \data[3]~I (
+	.datain(gnd),
+	.oe(gnd),
+	.combout(),
+	.padio(data[3]));
+// synopsys translate_off
+defparam \data[3]~I .operation_mode = "input";
+// synopsys translate_on
+
+// Location: PIN_19,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+maxv_io \data[4]~I (
+	.datain(gnd),
+	.oe(gnd),
+	.combout(),
+	.padio(data[4]));
+// synopsys translate_off
+defparam \data[4]~I .operation_mode = "input";
+// synopsys translate_on
+
+// Location: PIN_10,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+maxv_io \data[5]~I (
+	.datain(gnd),
+	.oe(gnd),
+	.combout(),
+	.padio(data[5]));
+// synopsys translate_off
+defparam \data[5]~I .operation_mode = "input";
+// synopsys translate_on
+
+// Location: PIN_48,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+maxv_io \data[6]~I (
+	.datain(gnd),
+	.oe(gnd),
+	.combout(),
+	.padio(data[6]));
+// synopsys translate_off
+defparam \data[6]~I .operation_mode = "input";
+// synopsys translate_on
+
+// Location: PIN_64,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+maxv_io \data[7]~I (
+	.datain(gnd),
+	.oe(gnd),
+	.combout(),
+	.padio(data[7]));
+// synopsys translate_off
+defparam \data[7]~I .operation_mode = "input";
+// synopsys translate_on
+
+// Location: PIN_12,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+maxv_io \data[8]~I (
+	.datain(gnd),
+	.oe(gnd),
+	.combout(),
+	.padio(data[8]));
+// synopsys translate_off
+defparam \data[8]~I .operation_mode = "input";
+// synopsys translate_on
+
+// Location: PIN_58,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+maxv_io \data[9]~I (
+	.datain(gnd),
+	.oe(gnd),
+	.combout(),
+	.padio(data[9]));
+// synopsys translate_off
+defparam \data[9]~I .operation_mode = "input";
+// synopsys translate_on
+
+// Location: PIN_40,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+maxv_io \data[10]~I (
+	.datain(gnd),
+	.oe(gnd),
+	.combout(),
+	.padio(data[10]));
+// synopsys translate_off
+defparam \data[10]~I .operation_mode = "input";
+// synopsys translate_on
+
+// Location: PIN_50,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+maxv_io \data[11]~I (
+	.datain(gnd),
+	.oe(gnd),
+	.combout(),
+	.padio(data[11]));
+// synopsys translate_off
+defparam \data[11]~I .operation_mode = "input";
+// synopsys translate_on
+
+// Location: PIN_28,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+maxv_io \data[12]~I (
+	.datain(gnd),
+	.oe(gnd),
+	.combout(),
+	.padio(data[12]));
+// synopsys translate_off
+defparam \data[12]~I .operation_mode = "input";
+// synopsys translate_on
+
+// Location: PIN_36,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+maxv_io \data[13]~I (
+	.datain(gnd),
+	.oe(gnd),
+	.combout(),
+	.padio(data[13]));
+// synopsys translate_off
+defparam \data[13]~I .operation_mode = "input";
+// synopsys translate_on
+
+// Location: PIN_46,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+maxv_io \data[14]~I (
+	.datain(gnd),
+	.oe(gnd),
+	.combout(),
+	.padio(data[14]));
+// synopsys translate_off
+defparam \data[14]~I .operation_mode = "input";
+// synopsys translate_on
+
+// Location: PIN_59,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+maxv_io \data[15]~I (
+	.datain(gnd),
+	.oe(gnd),
+	.combout(),
+	.padio(data[15]));
+// synopsys translate_off
+defparam \data[15]~I .operation_mode = "input";
+// synopsys translate_on
+
+endmodule

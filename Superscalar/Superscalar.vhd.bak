@@ -1,0 +1,21 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+
+entity regFile is
+generic(num_reg: integer := 32);
+	port(
+		rst : in std_logic;
+		write_regFile : in std_logic;		-- control signal for writing into RF  , if 0  read value from  reg_num register
+		reg_num : in integer; -- Register to write/read value 
+		write_val : in std_logic_vector(15 downto 0); -- Value to be written
+	
+		create_reg_map : in std_logic; -- if 1 => search for free phy_regs, create a reg_map from reg_num and return mapped reg number
+		free_reg : in std_logic; -- if 1=> free reg and clear maps  also commits the reg value to its arch register
+		reg_val : out std_logic_vector(15 downto 0); -- value read from reg_num
+		mapped_reg : out integer; -- mapped address
+		reg_mapout :out std_logic_vector(71 downto 0)--for renaming
+	);
+
+end entity;

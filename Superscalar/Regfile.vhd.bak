@@ -1,0 +1,89 @@
+--
+
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+--
+
+-- clock, reset, control signals, other inputs, outputs
+
+entity regFile is
+
+	port(
+		clk, rst : in std_logic;
+		write_regFile : in std_logic;		-- control signal for writing into RF
+		write_reg7 : in std_logic;			-- control signal for writing into R7
+		rf_a1, rf_a2, rf_a3 : in std_logic_vector(2 downto 0);
+		rf_d3: in std_logic_vector(15 downto 0);
+		reg7_in : in std_logic_vector(15 downto 0);
+		rf_d1, rf_d2, reg7_out : out std_logic_vector(15 downto 0)
+	);
+
+end entity;
+
+--
+
+architecture arcRF of regFile is
+
+	component reg is
+		port(
+			clk, rst, write_reg : in std_logic;
+			in_data : in std_logic_vector(15 DOWNTO 0);
+			out_data : out std_logic_vector(15 DOWNTO 0)
+		);
+	end component;
+
+	component reg7 is 
+		port(
+			clk : in std_logic;
+			rst : in std_logic;
+			write_en : in std_logic;		-- enable signal for writing into R7 (PC)
+			reg7_in : in std_logic_vector(15 downto 0);
+			reg7_out : out std_logic_vector(15 downto 0)
+		);
+	end component;
+
+	
+	-- registers R0 to R6
+	type regArr is array(0 to 6) of std_logic_vector(15 downto 0);
+	signal regs: regArr;
+	
+	-- below 2 are for allowing/disallowing writing into any of the 7 registers (R0 to R6)
+	-- (1 bit for each register)
+	signal write_reg: std_logic_vector(0 to 6);
+	shared variable write1: std_logic_vector(0 to 6) := (others=>'0');
+
+
+begin
+
+	make_regs : for i in 0 to 6 generate
+	R: reg
+		port map (clk, rst, write_reg(i), rf_d3, regs(i));
+	end generate make_regs;
+	
+	R7: reg7
+		port map (clk, rst, write_reg7, reg7_in, reg7_out);
+	
+	
+	process (clk,rst,write_regFile,write_reg7,rf_a1, rf_a2, rf_a3,rf_d3,reg7_in )
+	begin
+	
+		-- NOTE: reading, writing in "if-else" (only 1 at a time)
+	
+		if write_regFile='1' then		-- write into some register
+			write1 := (others=>'0');
+			write1(to_integer(unsigned(rf_a3))) := '1';
+		
+		else
+			write1 := (others=>'0');
+			rf_d1 <= regs(to_integer(unsigned(rf_a1)));
+			rf_d2 <= regs(to_integer(unsigned(rf_a2)));
+
+		end if;
+		
+		write_reg <= write1;
+		
+	end process;
+
+end architecture;

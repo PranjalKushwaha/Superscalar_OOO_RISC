@@ -1,0 +1,153 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.math_real.all;
+use ieee.numeric_std.all;
+use IEEE.STD_LOGIC_UNSIGNED.ALL; 
+
+
+
+
+entity rename is 
+	port(
+		rst : in std_logic;
+		write_regFile : in std_logic;		-- control signal for writing into RF  , if 0  read value from  reg_num register
+		reg_mapout :in std_logic_vector(71 downto 0);
+		pr_a : in std_logic_vector(2 downto 0);--addr of reg in instr
+		create_regmap :out std_logic; --connect to regfile create_reg_map
+      prev_rename_addr :out integer	-- rename register addr if its previously renamed (connect to regfile regnum)
+	   );
+
+	
+end rename;
+
+architecture rename_arch of rename  is
+ signal prev_renamereg : integer;
+ signal create_reg_map : std_logic;
+ 
+type reg_map_vec is array (0 to 23) of std_logic_vector(3 downto 0);  -- map data for phy regs, if bit num 0=1=> reg is mapped
+signal reg_map : reg_map_vec;
+begin
+
+process(write_regFile)
+begin 
+
+
+       reg_map(0)(1)<=reg_mapout(0);
+		 reg_map(0)(2)<=reg_mapout(1);
+		 reg_map(0)(3)<=reg_mapout(2);
+		
+		 reg_map(1)(1)<=reg_mapout(3);
+		 reg_map(1)(2)<=reg_mapout(4);
+		 reg_map(1)(3)<=reg_mapout(5);
+		
+		 reg_map(2)(1)<=reg_mapout(6);
+		 reg_map(2)(2)<=reg_mapout(7);
+		 reg_map(2)(3)<=reg_mapout(8);
+		
+		 reg_map(3)(1)<=reg_mapout(9);
+		 reg_map(3)(2)<=reg_mapout(10);
+		 reg_map(3)(3)<=reg_mapout(11);
+		
+		 reg_map(4)(1)<=reg_mapout(12);
+		 reg_map(4)(2)<=reg_mapout(13);
+		 reg_map(4)(3)<=reg_mapout(14);
+		
+		 reg_map(5)(1)<=reg_mapout(15);
+		 reg_map(5)(2)<=reg_mapout(16);
+		 reg_map(5)(3)<=reg_mapout(17);
+		
+		 reg_map(6)(1)<=reg_mapout(18);
+		 reg_map(6)(2)<=reg_mapout(19);
+		 reg_map(6)(3)<=reg_mapout(20);
+		
+		 reg_map(7)(1)<=reg_mapout(21);
+		 reg_map(7)(2)<=reg_mapout(22);
+		 reg_map(7)(3)<=reg_mapout(23);
+
+	    reg_map(8)(1)<=reg_mapout(24);
+		 reg_map(8)(2)<=reg_mapout(25);
+		 reg_map(8)(3)<=reg_mapout(26);
+		
+		 reg_map(9)(1)<=reg_mapout(27);
+		 reg_map(9)(2)<=reg_mapout(28);
+		 reg_map(9)(3)<=reg_mapout(29);
+		
+	    reg_map(10)(1)<=reg_mapout(30);
+		 reg_map(10)(2)<=reg_mapout(31);
+		 reg_map(10)(3)<=reg_mapout(32);
+		
+		 reg_map(11)(1)<=reg_mapout(33);
+		 reg_map(11)(2)<=reg_mapout(34);
+		 reg_map(11)(3)<=reg_mapout(35) ;
+		
+		 reg_map(12)(1)<=reg_mapout(36);
+		 reg_map(12)(2)<=reg_mapout(37);
+		 reg_map(12)(3)<=reg_mapout(38);
+		
+		 reg_map(13)(1)<=reg_mapout(39);
+		 reg_map(13)(2)<=reg_mapout(40);
+		 reg_map(13)(3)<=reg_mapout(41);
+		
+		 reg_map(14)(1)<=reg_mapout(42);
+		 reg_map(14)(2)<=reg_mapout(43);
+		 reg_map(14)(3)<=reg_mapout(44);
+		
+		 reg_map(15)(1)<=reg_mapout(45);
+		 reg_map(15)(2)<=reg_mapout(46);
+		 reg_map(15)(3)<=reg_mapout(47);
+		
+		 reg_map(16)(1)<=reg_mapout(48);
+		 reg_map(16)(2)<=reg_mapout(49);
+		 reg_map(16)(3)<=reg_mapout(50);
+		
+		 reg_map(17)(1)<=reg_mapout(51);
+		 reg_map(17)(2)<=reg_mapout(52);
+		 reg_map(17)(3)<=reg_mapout(53);
+		
+		 reg_map(18)(1)<=reg_mapout(54);
+		 reg_map(18)(2)<=reg_mapout(55);
+		 reg_map(18)(3)<=reg_mapout(56);
+		
+		 reg_map(19)(1)<=reg_mapout(57);
+		 reg_map(19)(2)<=reg_mapout(58);
+		 reg_map(19)(3)<=reg_mapout(59);
+		
+		 reg_map(20)(1)<=reg_mapout(60);
+		 reg_map(20)(2)<=reg_mapout(61);
+		 reg_map(20)(3)<=reg_mapout(62);
+		
+		 reg_map(21)(1)<=reg_mapout(63);
+		 reg_map(21)(2)<=reg_mapout(64);
+		 reg_map(21)(3)<=reg_mapout(65);
+		
+		 reg_map(22)(1)<=reg_mapout(66);
+		 reg_map(22)(2)<=reg_mapout(67);
+		 reg_map(22)(3)<=reg_mapout(68);
+		
+		 reg_map(23)(1)<=reg_mapout(69);
+		 reg_map(23)(2)<=reg_mapout(70);
+	    reg_map(23)(3)<=reg_mapout(71);
+
+ 
+ if  write_regFile = '1' then --rename the registor
+    for i in 0 to 23 loop
+	    if reg_map(i)(3 downto 1) = pr_a then --checking if the register is already renamed
+	       prev_renamereg <= i;
+		 end if;
+       exit;
+	    end loop; 
+			 
+		 create_reg_map <= '1';
+			
+	    end if;
+ 
+create_regmap <= create_reg_map;
+prev_rename_addr <= prev_renamereg; 
+end process;
+
+end architecture; 
+		
+			
+			
+			
+			

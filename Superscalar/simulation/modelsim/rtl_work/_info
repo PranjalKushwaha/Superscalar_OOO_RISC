@@ -1,0 +1,279 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/pranjal/CS232/Superscalar/simulation/modelsim
+Edecode
+Z1 w1670228292
+Z2 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 2
+R0
+Z5 8/home/pranjal/CS232/Superscalar/Decode.vhd
+Z6 F/home/pranjal/CS232/Superscalar/Decode.vhd
+l0
+L5 1
+VkHOE6fKIXS9aYZKQb:Y5h1
+!s100 2l`Og]1;o<EKVn?bVkVkh3
+Z7 OV;C;2020.1;71
+31
+Z8 !s110 1670233435
+!i10b 1
+Z9 !s108 1670233435.000000
+Z10 !s90 -reportprogress|300|-93|-work|work|/home/pranjal/CS232/Superscalar/Decode.vhd|
+Z11 !s107 /home/pranjal/CS232/Superscalar/Decode.vhd|
+!i113 1
+Z12 o-93 -work work
+Z13 tExplicit 1 CvgOpt 0
+Aid_arch
+R2
+R3
+R4
+DEx4 work 6 decode 0 22 kHOE6fKIXS9aYZKQb:Y5h1
+!i122 2
+l57
+L56 34
+VV]52=F<4@<G@oiDha<Va>0
+!s100 U^_?K<z?YgWZkdiTNgWzI0
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Efetch
+Z14 w1670228852
+Z15 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z16 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+R2
+R3
+R4
+!i122 5
+R0
+Z17 8/home/pranjal/CS232/Superscalar/Fetch.vhd
+Z18 F/home/pranjal/CS232/Superscalar/Fetch.vhd
+l0
+L6 1
+V@jH5gm3^7Q6]^_GlW_j[11
+!s100 @fZ1chdoJ_VIW_cThBJ5H1
+R7
+31
+R8
+!i10b 1
+R9
+Z19 !s90 -reportprogress|300|-93|-work|work|/home/pranjal/CS232/Superscalar/Fetch.vhd|
+!s107 /home/pranjal/CS232/Superscalar/Fetch.vhd|
+!i113 1
+R12
+R13
+Aload
+R15
+R16
+R2
+R3
+R4
+DEx4 work 5 fetch 0 22 @jH5gm3^7Q6]^_GlW_j[11
+!i122 5
+l27
+L23 36
+V;:McGzcC<RNHD?aPNU?W_0
+!s100 ::]Q2Ng5l;H>QlTc6mZ8D1
+R7
+31
+R8
+!i10b 1
+R9
+R19
+Z20 !s107 /home/pranjal/CS232/Superscalar/Fetch.vhd|
+!i113 1
+R12
+R13
+Ememory
+Z21 w1670170830
+R2
+Z22 DPx4 ieee 9 math_real 0 22 gNk<PdFJ<XNPcfef`f?Z81
+R3
+R4
+!i122 4
+R0
+Z23 8/home/pranjal/CS232/Superscalar/Memory.vhd
+Z24 F/home/pranjal/CS232/Superscalar/Memory.vhd
+l0
+L6 1
+Vf9aj4GSGfc:IDl5zzfJVH2
+!s100 >9gKaNO<PJD5cOfk7HkKf0
+R7
+31
+R8
+!i10b 1
+R9
+Z25 !s90 -reportprogress|300|-93|-work|work|/home/pranjal/CS232/Superscalar/Memory.vhd|
+Z26 !s107 /home/pranjal/CS232/Superscalar/Memory.vhd|
+!i113 1
+R12
+R13
+Amem
+R2
+R22
+R3
+R4
+DEx4 work 6 memory 0 22 f9aj4GSGfc:IDl5zzfJVH2
+!i122 4
+l26
+L21 21
+VzMU5oVSgfl_<g9mnJH=Ri3
+!s100 h]X=id:4@c9MLjQzXFhK;2
+R7
+31
+R8
+!i10b 1
+R9
+R25
+R26
+!i113 1
+R12
+R13
+Ereg
+Z27 w1670077987
+R3
+R4
+!i122 1
+R0
+Z28 8/home/pranjal/CS232/Superscalar/Reg.vhd
+Z29 F/home/pranjal/CS232/Superscalar/Reg.vhd
+l0
+L3 1
+VOSZ=7oXgAYbeOLliCaO;E1
+!s100 EniC>Xi3cTUeeGoV7o6zW2
+R7
+31
+R8
+!i10b 1
+R9
+Z30 !s90 -reportprogress|300|-93|-work|work|/home/pranjal/CS232/Superscalar/Reg.vhd|
+Z31 !s107 /home/pranjal/CS232/Superscalar/Reg.vhd|
+!i113 1
+R12
+R13
+Aarc_reg
+R3
+R4
+DEx4 work 3 reg 0 22 OSZ=7oXgAYbeOLliCaO;E1
+!i122 1
+l13
+L11 19
+V^A490`P7z^::5D_@gX;5X2
+!s100 @3V[`EWgT<?<33C1g][N`1
+R7
+31
+R8
+!i10b 1
+R9
+R30
+R31
+!i113 1
+R12
+R13
+Eregfile
+Z32 w1670233412
+R2
+R3
+R4
+!i122 0
+R0
+Z33 8/home/pranjal/CS232/Superscalar/Regfile.vhd
+Z34 F/home/pranjal/CS232/Superscalar/Regfile.vhd
+l0
+L6 1
+V][7k4`G:?Mb]0=GDKoD<23
+!s100 PY>I8lTgdfMRVUZPKRgeM3
+R7
+31
+R8
+!i10b 1
+R9
+Z35 !s90 -reportprogress|300|-93|-work|work|/home/pranjal/CS232/Superscalar/Regfile.vhd|
+Z36 !s107 /home/pranjal/CS232/Superscalar/Regfile.vhd|
+!i113 1
+R12
+R13
+Aarcrf
+R2
+R3
+R4
+DEx4 work 7 regfile 0 22 ][7k4`G:?Mb]0=GDKoD<23
+!i122 0
+l55
+L32 82
+VT3Q?dYD8_7[ZO4G4njJA<2
+!s100 FR5_[Yad>`4V7AE3mj5F42
+R7
+31
+R8
+!i10b 1
+R9
+R35
+R36
+!i113 1
+R12
+R13
+Esuperscalar
+Z37 w1670227979
+R15
+R16
+R2
+R22
+R3
+R4
+!i122 3
+R0
+Z38 8/home/pranjal/CS232/Superscalar/Superscalar.vhd
+Z39 F/home/pranjal/CS232/Superscalar/Superscalar.vhd
+l0
+L7 1
+VahYXE=D>0S67YG_KZc06z1
+!s100 Mgb_e2<zIi<i5e:VTCNl?3
+R7
+31
+R8
+!i10b 1
+R9
+Z40 !s90 -reportprogress|300|-93|-work|work|/home/pranjal/CS232/Superscalar/Superscalar.vhd|
+Z41 !s107 /home/pranjal/CS232/Superscalar/Superscalar.vhd|
+!i113 1
+R12
+R13
+Asuperscalar_arch
+R15
+R16
+R2
+R22
+R3
+R4
+DEx4 work 11 superscalar 0 22 ahYXE=D>0S67YG_KZc06z1
+!i122 3
+l170
+L16 169
+VH7dPC<d1HnITf>j:FU8z<2
+!s100 8Jkh8bJ1PETc:Ya1>^oW60
+R7
+31
+R8
+!i10b 1
+R9
+R40
+R41
+!i113 1
+R12
+R13
