@@ -10,7 +10,7 @@ z2
 cModel Technology
 Z0 d/home/pranjal/CS232/Superscalar/simulation/modelsim
 Edecode
-Z1 w1670228292
+Z1 w1670407165
 Z2 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
 Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z4 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
@@ -20,13 +20,13 @@ Z5 8/home/pranjal/CS232/Superscalar/Decode.vhd
 Z6 F/home/pranjal/CS232/Superscalar/Decode.vhd
 l0
 L5 1
-VkHOE6fKIXS9aYZKQb:Y5h1
-!s100 2l`Og]1;o<EKVn?bVkVkh3
+Vj]eNFoeT@V[9X43KF>4]I0
+!s100 nT129<cgkbOK83:WgTmmg1
 Z7 OV;C;2020.1;71
 31
-Z8 !s110 1670233435
+Z8 !s110 1670414031
 !i10b 1
-Z9 !s108 1670233435.000000
+Z9 !s108 1670414031.000000
 Z10 !s90 -reportprogress|300|-93|-work|work|/home/pranjal/CS232/Superscalar/Decode.vhd|
 Z11 !s107 /home/pranjal/CS232/Superscalar/Decode.vhd|
 !i113 1
@@ -36,12 +36,12 @@ Aid_arch
 R2
 R3
 R4
-DEx4 work 6 decode 0 22 kHOE6fKIXS9aYZKQb:Y5h1
+DEx4 work 6 decode 0 22 j]eNFoeT@V[9X43KF>4]I0
 !i122 2
-l57
-L56 34
-VV]52=F<4@<G@oiDha<Va>0
-!s100 U^_?K<z?YgWZkdiTNgWzI0
+l49
+L48 141
+VaYgm6ID]5o?@]5lLAA0N[2
+!s100 ^Y4NPFUfZDLLeZc8I[gJ=2
 R7
 31
 R8
@@ -186,7 +186,7 @@ R31
 R12
 R13
 Eregfile
-Z32 w1670233412
+Z32 w1670305906
 R2
 R3
 R4
@@ -196,15 +196,15 @@ Z33 8/home/pranjal/CS232/Superscalar/Regfile.vhd
 Z34 F/home/pranjal/CS232/Superscalar/Regfile.vhd
 l0
 L6 1
-V][7k4`G:?Mb]0=GDKoD<23
-!s100 PY>I8lTgdfMRVUZPKRgeM3
+VSK[J1f]D7P^NYSkzn:0]`2
+!s100 J=Vn_U^@M5Ya@o@@i]D?A2
 R7
 31
 R8
 !i10b 1
-R9
-Z35 !s90 -reportprogress|300|-93|-work|work|/home/pranjal/CS232/Superscalar/Regfile.vhd|
-Z36 !s107 /home/pranjal/CS232/Superscalar/Regfile.vhd|
+Z35 !s108 1670414030.000000
+Z36 !s90 -reportprogress|300|-93|-work|work|/home/pranjal/CS232/Superscalar/Regfile.vhd|
+Z37 !s107 /home/pranjal/CS232/Superscalar/Regfile.vhd|
 !i113 1
 R12
 R13
@@ -212,24 +212,24 @@ Aarcrf
 R2
 R3
 R4
-DEx4 work 7 regfile 0 22 ][7k4`G:?Mb]0=GDKoD<23
+DEx4 work 7 regfile 0 22 SK[J1f]D7P^NYSkzn:0]`2
 !i122 0
-l55
-L32 82
-VT3Q?dYD8_7[ZO4G4njJA<2
-!s100 FR5_[Yad>`4V7AE3mj5F42
+l59
+L35 105
+V;V=a8<0cb72U=PoRVlz@g0
+!s100 mPE2UOBk8ZT:U:=TORIHM0
 R7
 31
 R8
 !i10b 1
-R9
 R35
 R36
+R37
 !i113 1
 R12
 R13
 Esuperscalar
-Z37 w1670227979
+Z38 w1670407402
 R15
 R16
 R2
@@ -238,8 +238,8 @@ R3
 R4
 !i122 3
 R0
-Z38 8/home/pranjal/CS232/Superscalar/Superscalar.vhd
-Z39 F/home/pranjal/CS232/Superscalar/Superscalar.vhd
+Z39 8/home/pranjal/CS232/Superscalar/Superscalar.vhd
+Z40 F/home/pranjal/CS232/Superscalar/Superscalar.vhd
 l0
 L7 1
 VahYXE=D>0S67YG_KZc06z1
@@ -249,8 +249,8 @@ R7
 R8
 !i10b 1
 R9
-Z40 !s90 -reportprogress|300|-93|-work|work|/home/pranjal/CS232/Superscalar/Superscalar.vhd|
-Z41 !s107 /home/pranjal/CS232/Superscalar/Superscalar.vhd|
+Z41 !s90 -reportprogress|300|-93|-work|work|/home/pranjal/CS232/Superscalar/Superscalar.vhd|
+Z42 !s107 /home/pranjal/CS232/Superscalar/Superscalar.vhd|
 !i113 1
 R12
 R13
@@ -263,17 +263,17 @@ R3
 R4
 DEx4 work 11 superscalar 0 22 ahYXE=D>0S67YG_KZc06z1
 !i122 3
-l170
-L16 169
-VH7dPC<d1HnITf>j:FU8z<2
-!s100 8Jkh8bJ1PETc:Ya1>^oW60
+l173
+L16 173
+V3411<PKJ41geQU]99;z8Q0
+!s100 i^I[^aHE1Lc2l7<zEIE_c2
 R7
 31
 R8
 !i10b 1
 R9
-R40
 R41
+R42
 !i113 1
 R12
 R13

@@ -54,7 +54,13 @@ set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_
 set_global_assignment -name VHDL_FILE Regfile.vhd
 set_global_assignment -name VHDL_FILE Reg.vhd
 set_global_assignment -name VHDL_FILE Decode.vhd
-set_global_assignment -name VHDL_FILE Rename.vhd
 set_global_assignment -name VHDL_FILE Superscalar.vhd
 set_global_assignment -name VHDL_FILE Memory.vhd
 set_global_assignment -name VHDL_FILE Fetch.vhd
+set_global_assignment -name VHDL_FILE Res.vhd
+set_global_assignment -name VHDL_FILE Commit.vhd
+set_global_assignment -name NUM_PARALLEL_PROCESSORS 1
+set_global_assignment -name VHDL_FILE Write_back.vhd
+set_global_assignment -name VHDL_FILE ROB.vhd
+set_global_assignment -name VHDL_FILE Exec.vhd
+set_global_assignment -name VHDL_FILE Alu.vhd

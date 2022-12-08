@@ -8,21 +8,11 @@ entity Decode is
 		rst: in std_logic;
 		loading_mem : in std_logic; -- 1 if memory loading is in progress
 		id_freeze : in std_logic ;
-
-		write_regFile : out std_logic;	
-		read_1 : out integer;
-		read_2 : out integer;
-		read_3 : out integer;
-		read_4 : out integer;
-		create_reg_map : out std_logic; -- if 1 => search for free phy_regs, create a reg_map from reg_num and return mapped reg number
-		free_reg : out std_logic; -- if 1=> free reg and clear maps  also commits the reg value to its arch register
-		reg_val_1 : in std_logic_vector(15 downto 0); 
-		reg_val_2 : in std_logic_vector(15 downto 0);
-		reg_val_3 : in std_logic_vector(15 downto 0); 
-		reg_val_4 : in std_logic_vector(15 downto 0);
 		
 		instruction_1 : in std_logic_vector(15 downto 0) ;
 		instruction_2 : in std_logic_vector(15 downto 0) ;
+		ins_1_pc : in std_logic_vector(5 downto 0);
+		ins_2_pc : in std_logic_vector(5 downto 0);
 
 
 -- Each instruction gets an integer assigned, numbering 0 to 17  in order(page 3, encoding table order)
@@ -34,22 +24,24 @@ entity Decode is
 -- The signals to be used will be decided by exec stage based on the ins number.(eg. exec will use only r1, r2 and r3 for ADD )
 -- The remaining signals should be ignored.
 		r1_ins_1 : out integer; -- Dest reg. for ins1 ,specified by  reg number
-		r2_ins_1 : out std_logic_vector(15 downto 0); -- Value read from r2
-		r3_ins_1 : out std_logic_vector(15 downto 0); --value read from r3
+		r2_ins_1 : out integer; -- Value read from r2
+		r3_ins_1 : out integer; --value read from r3
 		Imm_6_ins_1: out std_logic_vector(15 downto 0); -- Immediate 6 value (used in ADI, LW,SW etc.), sign extended to 16 bits
 		Imm_9_ins_1: out std_logic_vector(15 downto 0); --Immediate 9 (LHI, JAL), sign extended to 16 bits
 		Imm_8_ins_1: out std_logic_vector(7 downto 0);  --Immediate 8 (LM and SM)
 
 
 		r1_ins_2 : out integer;  -- Same as ins_1
-		r2_ins_2 : out std_logic_vector(15 downto 0);
-		r3_ins_2 : out std_logic_vector(15 downto 0);
+		r2_ins_2 : out integer;
+		r3_ins_2 : out integer;
 		Imm_6_ins_2: out std_logic_vector(15 downto 0);
 		Imm_9_ins_2: out std_logic_vector(15 downto 0);
 		Imm_8_ins_2: out std_logic_vector(7 downto 0);
 
 		pc_ins_1 : out std_logic_vector(5 downto 0);
-		pc_ins_2 : out std_logic_vector(5 downto 0)
+		pc_ins_2 : out std_logic_vector(5 downto 0);
+		num_reg_1 : out integer;
+		num_reg_2 : out integer
 	  ) ;
 end entity ;
 
@@ -69,23 +61,130 @@ begin
 				Imm_6_ins_2 <= std_logic_vector(resize(unsigned(instruction_2(5 downto 0)),16));
 				Imm_9_ins_2 <= std_logic_vector(resize(unsigned(instruction_2(8 downto 0)),16));
 				Imm_8_ins_2 <= instruction_2(8 downto 1);
-				write_regfile <='0';
-				create_reg_map <= '0';
-				free_reg <='0';
-				read_1 <=to_integer(unsigned(instruction_1(8 downto 6)));
-				read_2 <=to_integer(unsigned(instruction_1(5 downto 3)));
-				read_3 <=to_integer(unsigned(instruction_2(8 downto 6)));
-				read_4 <=to_integer(unsigned(instruction_2(5 downto 3)));
-			end if;
-			if falling_edge(clk) then 
-				r2_ins_1 <= reg_val_1;
-				r3_ins_1 <= reg_val_2;
-				r2_ins_2 <= reg_val_3;
-				r3_ins_2 <= reg_val_4;
-			
+				
+				r2_ins_1 <= to_integer(unsigned(instruction_1(8 downto 6)));
+				r3_ins_1 <= to_integer(unsigned(instruction_1(5 downto 3)));
+				r2_ins_2 <= to_integer(unsigned(instruction_2(8 downto 6)));
+				r3_ins_2 <= to_integer(unsigned(instruction_2(8 downto 6)));
+				pc_ins_1 <= ins_1_pc;
+				pc_ins_2 <= ins_2_pc;
 			end if;
 		end if;
 	end process;
+	process(instruction_1)
+	begin
+		if instruction_1(15 downto 12) = "0001" then
+			if instruction_1(1 downto 0) = "00" then
+				ins_1 <= 0;
+			elsif instruction_1(1 downto 0) = "10" then
+				ins_1 <= 1;
+			elsif instruction_1(1 downto 0) = "01" then
+				ins_1 <= 2;
+			elsif instruction_1(1 downto 0) = "11" then
+				ins_1 <= 3;
+			end if;
+			num_reg_1 <= 3;
+		elsif instruction_1(15 downto 12)= "0000" then
+			ins_1<= 4;
+			num_reg_1 <= 2;
+		elsif instruction_1(15 downto 12)= "0010" then
+			if instruction_1(1 downto 0) = "00" then
+				ins_1 <= 5;
+			elsif instruction_1(1 downto 0) = "10" then
+				ins_1 <= 6;
+			elsif instruction_1(1 downto 0) = "01" then
+				ins_1 <= 7;
+			end if;
+			num_reg_1 <= 3;
+		elsif instruction_1(15 downto 12)= "0100" then
+			ins_1<= 8;
+			num_reg_1 <= 1;
+		elsif instruction_1(15 downto 12)= "0101" then
+			ins_1<= 9;
+			num_reg_1 <= 2;
+		elsif instruction_1(15 downto 12)= "0111" then
+			ins_1<= 10;
+			num_reg_1 <= 2;
+		elsif instruction_1(15 downto 12)= "1101" then
+			ins_1<= 11;
+			num_reg_1 <= 1;
+		elsif instruction_1(15 downto 12)= "1100" then
+			ins_1<= 12;
+			num_reg_1 <= 1;
+		elsif instruction_1(15 downto 12)= "1000" then
+			ins_1<= 13;
+			num_reg_1 <= 2;
+		elsif instruction_1(15 downto 12)= "1001" then
+			ins_1<= 14;
+			num_reg_1 <= 1;
+		elsif instruction_1(15 downto 12)= "1010" then
+			ins_1<= 15;
+			num_reg_1 <= 2;
+		elsif instruction_1(15 downto 12)= "1011" then
+			ins_1<= 16;
+			num_reg_1 <= 1;
+		else 
+			ins_1<=17; --no-op
+		end if;
+	end process;
+
+	process(instruction_2)
+	begin
+		if instruction_2(15 downto 12) = "0001" then
+			if instruction_2(1 downto 0) = "00" then
+				ins_2 <= 0;
+			elsif instruction_2(1 downto 0) = "10" then
+				ins_2 <= 1;
+			elsif instruction_2(1 downto 0) = "01" then
+				ins_2 <= 2;
+			elsif instruction_2(1 downto 0) = "11" then
+				ins_2 <= 3;
+			end if;
+			num_reg_2 <= 3;
+		elsif instruction_2(15 downto 12)= "0000" then
+			ins_2<= 4;
+			num_reg_2 <= 2;
+		elsif instruction_2(15 downto 12)= "0010" then
+			if instruction_2(1 downto 0) = "00" then
+				ins_2 <= 5;
+			elsif instruction_2(1 downto 0) = "10" then
+				ins_2 <= 6;
+			elsif instruction_2(1 downto 0) = "01" then
+				ins_2 <= 7;
+			end if;
+			num_reg_2 <= 3;
+		elsif instruction_2(15 downto 12)= "0100" then
+			ins_2<= 8;
+			num_reg_2 <= 1;
+		elsif instruction_2(15 downto 12)= "0101" then
+			ins_2<= 9;
+			num_reg_2 <= 2;
+		elsif instruction_2(15 downto 12)= "0111" then
+			ins_2<= 10;
+			num_reg_2 <= 2;
+		elsif instruction_2(15 downto 12)= "1101" then
+			ins_2<= 11;
+			num_reg_2 <= 1;
+		elsif instruction_2(15 downto 12)= "1100" then
+			ins_2<= 12;
+			num_reg_2 <= 1;
+		elsif instruction_2(15 downto 12)= "1000" then
+			ins_2<= 13;
+			num_reg_2 <= 2;
+		elsif instruction_2(15 downto 12)= "1001" then
+			ins_2<= 14;
+			num_reg_2 <= 1;
+		elsif instruction_2(15 downto 12)= "1010" then
+			ins_2<= 15;
+			num_reg_2 <= 2;
+		elsif instruction_2(15 downto 12)= "1011" then
+			ins_2<= 16;
+			num_reg_2 <= 1;
+		else 
+			ins_2<=17; --no-op
+		end if;
+	end process;
+
 end architecture;
 
 

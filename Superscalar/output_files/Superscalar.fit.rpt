@@ -1,5 +1,5 @@
 Fitter report for Superscalar
-Mon Dec  5 16:55:11 2022
+Fri Dec  9 00:26:54 2022
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -49,7 +49,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------+
 ; Fitter Summary                                                      ;
 +-----------------------+---------------------------------------------+
-; Fitter Status         ; Successful - Mon Dec  5 16:55:11 2022       ;
+; Fitter Status         ; Successful - Fri Dec  9 00:26:54 2022       ;
 ; Quartus Prime Version ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name         ; Superscalar                                 ;
 ; Top-level Entity Name ; Superscalar                                 ;
@@ -69,6 +69,7 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                             ; Setting                        ; Default Value                  ;
 +--------------------------------------------------------------------+--------------------------------+--------------------------------+
 ; Device                                                             ; auto                           ;                                ;
+; Maximum processors allowed for parallel compilation                ; 1                              ;                                ;
 ; Fit Attempts to Skip                                               ; 0                              ; 0.0                            ;
 ; Use smart compilation                                              ; Off                            ; Off                            ;
 ; Enable parallel Assembler and Timing Analyzer during compilation   ; On                             ; On                             ;
@@ -110,20 +111,15 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------------------------------------+--------------------------------+--------------------------------+
 
 
-+------------------------------------------+
-; Parallel Compilation                     ;
-+----------------------------+-------------+
-; Processors                 ; Number      ;
-+----------------------------+-------------+
-; Number detected on machine ; 8           ;
-; Maximum allowed            ; 4           ;
-;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
-;                            ;             ;
-; Usage by Processor         ; % Time Used ;
-;     Processor 1            ; 100.0%      ;
-+----------------------------+-------------+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 8      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
 
 
 +--------------+
@@ -420,8 +416,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------+
 ; Fitter Messages ;
 +-----------------+
-Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Warning (12473): User specified to use only one processors but 4 processors were detected which could be used to decrease run time.
 Info (119004): Automatically selected device 5M40ZE64C4 for design Superscalar
 Info (119005): Fitting design with smaller device may be possible, but smaller device must be specified
 Info (171003): Fitter is performing an Auto Fit compilation, which may decrease Fitter effort to reduce compilation time
@@ -461,13 +456,13 @@ Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:00
-Info (11888): Total time spent on timing analysis during the Fitter is 0.01 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.00 seconds.
 Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:00
 Warning (169174): The Reserve All Unused Pins setting has not been specified, and will default to 'As output driving ground'.
 Info (144001): Generated suppressed messages file /home/pranjal/CS232/Superscalar/output_files/Superscalar.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 763 megabytes
-    Info: Processing ended: Mon Dec  5 16:55:11 2022
+    Info: Peak virtual memory: 472 megabytes
+    Info: Processing ended: Fri Dec  9 00:26:54 2022
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 

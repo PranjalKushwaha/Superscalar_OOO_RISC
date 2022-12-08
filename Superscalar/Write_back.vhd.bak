@@ -1,0 +1,18 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity Write_back is
+port 
+(
+	clk,rst : in std_logic;
+	reg_1,reg_2 : in integer;
+	data_1,data_2 : in std_logic_vector(15 downto 0);
+	z1,z2,c1,c2 : in std_logic;
+	pc1,pc2 : in std_logic
+);
+end entity;
+
+architecture writeRf of Write_back is
+
+end architecture;

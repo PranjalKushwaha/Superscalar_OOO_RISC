@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Superscalar
-Mon Dec  5 16:55:09 2022
+Fri Dec  9 00:31:07 2022
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -10,17 +10,7 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Parameter Settings for User Entity Instance: memory:mem_inst
- 10. Parameter Settings for User Entity Instance: regFile:RF_component
- 11. Port Connectivity Checks: "Decode:Decode_comp"
- 12. Port Connectivity Checks: "regFile:RF_component"
- 13. Port Connectivity Checks: "Fetch:fetch_Component"
- 14. Port Connectivity Checks: "memory:mem_inst"
- 15. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Messages
 
 
 
@@ -47,15 +37,11 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                              ;
 +-----------------------------+---------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Mon Dec  5 16:55:09 2022       ;
+; Analysis & Synthesis Status ; Failed - Fri Dec  9 00:31:07 2022           ;
 ; Quartus Prime Version       ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name               ; Superscalar                                 ;
 ; Top-level Entity Name       ; Superscalar                                 ;
 ; Family                      ; MAX V                                       ;
-; Total logic elements        ; 0                                           ;
-; Total pins                  ; 25                                          ;
-; Total virtual pins          ; 0                                           ;
-; UFM blocks                  ; 0 / 1 ( 0 % )                               ;
 +-----------------------------+---------------------------------------------+
 
 
@@ -66,6 +52,7 @@ https://fpgasoftware.intel.com/eula.
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Top-level entity name                                            ; Superscalar        ; Superscalar        ;
 ; Family name                                                      ; MAX V              ; Cyclone V          ;
+; Maximum processors allowed for parallel compilation              ; 1                  ;                    ;
 ; Use smart compilation                                            ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
 ; Enable compact report table                                      ; Off                ; Off                ;
@@ -129,169 +116,15 @@ https://fpgasoftware.intel.com/eula.
 +------------------------------------------------------------------+--------------------+--------------------+
 
 
-+------------------------------------------+
-; Parallel Compilation                     ;
-+----------------------------+-------------+
-; Processors                 ; Number      ;
-+----------------------------+-------------+
-; Number detected on machine ; 8           ;
-; Maximum allowed            ; 4           ;
-;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
-;                            ;             ;
-; Usage by Processor         ; % Time Used ;
-;     Processor 1            ; 100.0%      ;
-+----------------------------+-------------+
-
-
-+----------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                           ;
-+----------------------------------+-----------------+-----------------+-------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                    ; Library ;
-+----------------------------------+-----------------+-----------------+-------------------------------------------------+---------+
-; Regfile.vhd                      ; yes             ; User VHDL File  ; /home/pranjal/CS232/Superscalar/Regfile.vhd     ;         ;
-; Reg.vhd                          ; yes             ; User VHDL File  ; /home/pranjal/CS232/Superscalar/Reg.vhd         ;         ;
-; Decode.vhd                       ; yes             ; User VHDL File  ; /home/pranjal/CS232/Superscalar/Decode.vhd      ;         ;
-; Superscalar.vhd                  ; yes             ; User VHDL File  ; /home/pranjal/CS232/Superscalar/Superscalar.vhd ;         ;
-; Memory.vhd                       ; yes             ; User VHDL File  ; /home/pranjal/CS232/Superscalar/Memory.vhd      ;         ;
-; Fetch.vhd                        ; yes             ; User VHDL File  ; /home/pranjal/CS232/Superscalar/Fetch.vhd       ;         ;
-+----------------------------------+-----------------+-----------------+-------------------------------------------------+---------+
-
-
-+-----------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary         ;
-+---------------------------------------------+-------+
-; Resource                                    ; Usage ;
-+---------------------------------------------+-------+
-; Total logic elements                        ; 0     ;
-;     -- Combinational with no register       ; 0     ;
-;     -- Register only                        ; 0     ;
-;     -- Combinational with a register        ; 0     ;
-;                                             ;       ;
-; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 0     ;
-;     -- 3 input functions                    ; 0     ;
-;     -- 2 input functions                    ; 0     ;
-;     -- 1 input functions                    ; 0     ;
-;     -- 0 input functions                    ; 0     ;
-;                                             ;       ;
-; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 0     ;
-;     -- arithmetic mode                      ; 0     ;
-;     -- qfbk mode                            ; 0     ;
-;     -- register cascade mode                ; 0     ;
-;     -- synchronous clear/load mode          ; 0     ;
-;     -- asynchronous clear/load mode         ; 0     ;
-;                                             ;       ;
-; Total registers                             ; 0     ;
-; I/O pins                                    ; 25    ;
-+---------------------------------------------+-------+
-
-
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                ;
-+----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name ; Entity Name ; Library Name ;
-+----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+-------------+--------------+
-; |Superscalar               ; 0 (0)       ; 0            ; 0          ; 25   ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Superscalar        ; Superscalar ; work         ;
-+----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+-------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 0     ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
-
-
-+--------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: memory:mem_inst ;
-+----------------+-------+-------------------------------------+
-; Parameter Name ; Value ; Type                                ;
-+----------------+-------+-------------------------------------+
-; ram_size       ; 64    ; Signed Integer                      ;
-+----------------+-------+-------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: regFile:RF_component ;
-+----------------+-------+------------------------------------------+
-; Parameter Name ; Value ; Type                                     ;
-+----------------+-------+------------------------------------------+
-; num_reg        ; 32    ; Signed Integer                           ;
-+----------------+-------+------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Decode:Decode_comp"                                                                        ;
-+-------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port        ; Type   ; Severity ; Details                                                                             ;
-+-------------+--------+----------+-------------------------------------------------------------------------------------+
-; id_freeze   ; Input  ; Info     ; Stuck at GND                                                                        ;
-; ins_1       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; ins_2       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; r1_ins_1    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; r2_ins_1    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; r3_ins_1    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; imm_6_ins_1 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; imm_9_ins_1 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; imm_8_ins_1 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; r1_ins_2    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; r2_ins_2    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; r3_ins_2    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; imm_6_ins_2 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; imm_9_ins_2 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; imm_8_ins_2 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; pc_ins_1    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; pc_ins_2    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+-------------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+--------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "regFile:RF_component"                                                                         ;
-+----------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port           ; Type   ; Severity ; Details                                                                             ;
-+----------------+--------+----------+-------------------------------------------------------------------------------------+
-; reg_num[30..1] ; Input  ; Info     ; Stuck at GND                                                                        ;
-; reg_num[31]    ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; reg_num[0]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; mapped_reg     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; reg_mapout     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+----------------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Fetch:fetch_Component"                                                                      ;
-+--------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port         ; Type   ; Severity ; Details                                                                             ;
-+--------------+--------+----------+-------------------------------------------------------------------------------------+
-; if_freeze    ; Input  ; Info     ; Stuck at GND                                                                        ;
-; pc_overwrite ; Input  ; Info     ; Stuck at GND                                                                        ;
-; pc_inp       ; Input  ; Info     ; Stuck at GND                                                                        ;
-; ins_pc1      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; ins_pc2      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+--------------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+---------------------------------------------+
-; Port Connectivity Checks: "memory:mem_inst" ;
-+---------+-------+----------+----------------+
-; Port    ; Type  ; Severity ; Details        ;
-+---------+-------+----------+----------------+
-; tostore ; Input ; Info     ; Stuck at GND   ;
-+---------+-------+----------+----------------+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 8      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
 
 
 +-------------------------------+
@@ -300,22 +133,18 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Mon Dec  5 16:55:02 2022
+    Info: Processing started: Fri Dec  9 00:31:00 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Superscalar -c Superscalar
-Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Warning (12473): User specified to use only one processors but 4 processors were detected which could be used to decrease run time.
 Info (12021): Found 2 design units, including 1 entities, in source file Regfile.vhd
-    Info (12022): Found design unit 1: regFile-arcRF File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 32
+    Info (12022): Found design unit 1: regFile-arcRF File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 37
     Info (12023): Found entity 1: regFile File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file Reg.vhd
     Info (12022): Found design unit 1: reg-arc_reg File: /home/pranjal/CS232/Superscalar/Reg.vhd Line: 11
     Info (12023): Found entity 1: reg File: /home/pranjal/CS232/Superscalar/Reg.vhd Line: 3
 Info (12021): Found 2 design units, including 1 entities, in source file Decode.vhd
-    Info (12022): Found design unit 1: Decode-id_arch File: /home/pranjal/CS232/Superscalar/Decode.vhd Line: 56
+    Info (12022): Found design unit 1: Decode-id_arch File: /home/pranjal/CS232/Superscalar/Decode.vhd Line: 48
     Info (12023): Found entity 1: Decode File: /home/pranjal/CS232/Superscalar/Decode.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file Rename.vhd
-    Info (12022): Found design unit 1: rename-rename_arch File: /home/pranjal/CS232/Superscalar/Rename.vhd Line: 19
-    Info (12023): Found entity 1: rename File: /home/pranjal/CS232/Superscalar/Rename.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file Superscalar.vhd
     Info (12022): Found design unit 1: Superscalar-Superscalar_arch File: /home/pranjal/CS232/Superscalar/Superscalar.vhd Line: 16
     Info (12023): Found entity 1: Superscalar File: /home/pranjal/CS232/Superscalar/Superscalar.vhd Line: 7
@@ -325,423 +154,42 @@ Info (12021): Found 2 design units, including 1 entities, in source file Memory.
 Info (12021): Found 2 design units, including 1 entities, in source file Fetch.vhd
     Info (12022): Found design unit 1: Fetch-load File: /home/pranjal/CS232/Superscalar/Fetch.vhd Line: 23
     Info (12023): Found entity 1: Fetch File: /home/pranjal/CS232/Superscalar/Fetch.vhd Line: 6
-Info (12127): Elaborating entity "Superscalar" for the top level hierarchy
-Warning (10540): VHDL Signal Declaration warning at Superscalar.vhd(129): used explicit default value for signal "if_freeze" because signal was never assigned a value File: /home/pranjal/CS232/Superscalar/Superscalar.vhd Line: 129
-Warning (10540): VHDL Signal Declaration warning at Superscalar.vhd(129): used explicit default value for signal "id_freeze" because signal was never assigned a value File: /home/pranjal/CS232/Superscalar/Superscalar.vhd Line: 129
-Warning (10540): VHDL Signal Declaration warning at Superscalar.vhd(130): used explicit default value for signal "pc_overwrite" because signal was never assigned a value File: /home/pranjal/CS232/Superscalar/Superscalar.vhd Line: 130
-Warning (10540): VHDL Signal Declaration warning at Superscalar.vhd(131): used explicit default value for signal "pc_inp" because signal was never assigned a value File: /home/pranjal/CS232/Superscalar/Superscalar.vhd Line: 131
-Warning (10036): Verilog HDL or VHDL warning at Superscalar.vhd(133): object "ins_pc_1" assigned a value but never read File: /home/pranjal/CS232/Superscalar/Superscalar.vhd Line: 133
-Warning (10036): Verilog HDL or VHDL warning at Superscalar.vhd(134): object "ins_pc_2" assigned a value but never read File: /home/pranjal/CS232/Superscalar/Superscalar.vhd Line: 134
-Warning (10540): VHDL Signal Declaration warning at Superscalar.vhd(140): used explicit default value for signal "mem_store_data" because signal was never assigned a value File: /home/pranjal/CS232/Superscalar/Superscalar.vhd Line: 140
-Warning (10541): VHDL Signal Declaration warning at Superscalar.vhd(146): used implicit default value for signal "reg_num" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/pranjal/CS232/Superscalar/Superscalar.vhd Line: 146
-Warning (10541): VHDL Signal Declaration warning at Superscalar.vhd(151): used implicit default value for signal "write_val" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/pranjal/CS232/Superscalar/Superscalar.vhd Line: 151
-Warning (10036): Verilog HDL or VHDL warning at Superscalar.vhd(158): object "mapped_reg" assigned a value but never read File: /home/pranjal/CS232/Superscalar/Superscalar.vhd Line: 158
-Warning (10036): Verilog HDL or VHDL warning at Superscalar.vhd(159): object "reg_mapout" assigned a value but never read File: /home/pranjal/CS232/Superscalar/Superscalar.vhd Line: 159
-Warning (10036): Verilog HDL or VHDL warning at Superscalar.vhd(162): object "ins_1" assigned a value but never read File: /home/pranjal/CS232/Superscalar/Superscalar.vhd Line: 162
-Warning (10036): Verilog HDL or VHDL warning at Superscalar.vhd(163): object "ins_2" assigned a value but never read File: /home/pranjal/CS232/Superscalar/Superscalar.vhd Line: 163
-Warning (10036): Verilog HDL or VHDL warning at Superscalar.vhd(164): object "r1_ins_1" assigned a value but never read File: /home/pranjal/CS232/Superscalar/Superscalar.vhd Line: 164
-Warning (10036): Verilog HDL or VHDL warning at Superscalar.vhd(165): object "r2_ins_1" assigned a value but never read File: /home/pranjal/CS232/Superscalar/Superscalar.vhd Line: 165
-Warning (10036): Verilog HDL or VHDL warning at Superscalar.vhd(166): object "r3_ins_1" assigned a value but never read File: /home/pranjal/CS232/Superscalar/Superscalar.vhd Line: 166
-Warning (10036): Verilog HDL or VHDL warning at Superscalar.vhd(167): object "Imm_6_ins_1" assigned a value but never read File: /home/pranjal/CS232/Superscalar/Superscalar.vhd Line: 167
-Warning (10036): Verilog HDL or VHDL warning at Superscalar.vhd(168): object "Imm_9_ins_1" assigned a value but never read File: /home/pranjal/CS232/Superscalar/Superscalar.vhd Line: 168
-Warning (10036): Verilog HDL or VHDL warning at Superscalar.vhd(169): object "Imm_8_ins_1" assigned a value but never read File: /home/pranjal/CS232/Superscalar/Superscalar.vhd Line: 169
-Warning (10036): Verilog HDL or VHDL warning at Superscalar.vhd(171): object "r1_ins_2" assigned a value but never read File: /home/pranjal/CS232/Superscalar/Superscalar.vhd Line: 171
-Warning (10036): Verilog HDL or VHDL warning at Superscalar.vhd(172): object "r2_ins_2" assigned a value but never read File: /home/pranjal/CS232/Superscalar/Superscalar.vhd Line: 172
-Warning (10036): Verilog HDL or VHDL warning at Superscalar.vhd(173): object "r3_ins_2" assigned a value but never read File: /home/pranjal/CS232/Superscalar/Superscalar.vhd Line: 173
-Warning (10036): Verilog HDL or VHDL warning at Superscalar.vhd(174): object "Imm_6_ins_2" assigned a value but never read File: /home/pranjal/CS232/Superscalar/Superscalar.vhd Line: 174
-Warning (10036): Verilog HDL or VHDL warning at Superscalar.vhd(175): object "Imm_9_ins_2" assigned a value but never read File: /home/pranjal/CS232/Superscalar/Superscalar.vhd Line: 175
-Warning (10036): Verilog HDL or VHDL warning at Superscalar.vhd(176): object "Imm_8_ins_2" assigned a value but never read File: /home/pranjal/CS232/Superscalar/Superscalar.vhd Line: 176
-Warning (10036): Verilog HDL or VHDL warning at Superscalar.vhd(178): object "pc_ins_1" assigned a value but never read File: /home/pranjal/CS232/Superscalar/Superscalar.vhd Line: 178
-Warning (10036): Verilog HDL or VHDL warning at Superscalar.vhd(179): object "pc_ins_2" assigned a value but never read File: /home/pranjal/CS232/Superscalar/Superscalar.vhd Line: 179
-Info (12128): Elaborating entity "memory" for hierarchy "memory:mem_inst" File: /home/pranjal/CS232/Superscalar/Superscalar.vhd Line: 183
-Warning (10492): VHDL Process Statement warning at Memory.vhd(33): signal "ram" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/pranjal/CS232/Superscalar/Memory.vhd Line: 33
-Warning (10492): VHDL Process Statement warning at Memory.vhd(34): signal "ram" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/pranjal/CS232/Superscalar/Memory.vhd Line: 34
-Warning (10631): VHDL Process Statement warning at Memory.vhd(27): inferring latch(es) for signal or variable "mem_out_1", which holds its previous value in one or more paths through the process File: /home/pranjal/CS232/Superscalar/Memory.vhd Line: 27
-Warning (10631): VHDL Process Statement warning at Memory.vhd(27): inferring latch(es) for signal or variable "mem_out_2", which holds its previous value in one or more paths through the process File: /home/pranjal/CS232/Superscalar/Memory.vhd Line: 27
-Info (10041): Inferred latch for "mem_out_2[0]" at Memory.vhd(27) File: /home/pranjal/CS232/Superscalar/Memory.vhd Line: 27
-Info (10041): Inferred latch for "mem_out_2[1]" at Memory.vhd(27) File: /home/pranjal/CS232/Superscalar/Memory.vhd Line: 27
-Info (10041): Inferred latch for "mem_out_2[2]" at Memory.vhd(27) File: /home/pranjal/CS232/Superscalar/Memory.vhd Line: 27
-Info (10041): Inferred latch for "mem_out_2[3]" at Memory.vhd(27) File: /home/pranjal/CS232/Superscalar/Memory.vhd Line: 27
-Info (10041): Inferred latch for "mem_out_2[4]" at Memory.vhd(27) File: /home/pranjal/CS232/Superscalar/Memory.vhd Line: 27
-Info (10041): Inferred latch for "mem_out_2[5]" at Memory.vhd(27) File: /home/pranjal/CS232/Superscalar/Memory.vhd Line: 27
-Info (10041): Inferred latch for "mem_out_2[6]" at Memory.vhd(27) File: /home/pranjal/CS232/Superscalar/Memory.vhd Line: 27
-Info (10041): Inferred latch for "mem_out_2[7]" at Memory.vhd(27) File: /home/pranjal/CS232/Superscalar/Memory.vhd Line: 27
-Info (10041): Inferred latch for "mem_out_2[8]" at Memory.vhd(27) File: /home/pranjal/CS232/Superscalar/Memory.vhd Line: 27
-Info (10041): Inferred latch for "mem_out_2[9]" at Memory.vhd(27) File: /home/pranjal/CS232/Superscalar/Memory.vhd Line: 27
-Info (10041): Inferred latch for "mem_out_2[10]" at Memory.vhd(27) File: /home/pranjal/CS232/Superscalar/Memory.vhd Line: 27
-Info (10041): Inferred latch for "mem_out_2[11]" at Memory.vhd(27) File: /home/pranjal/CS232/Superscalar/Memory.vhd Line: 27
-Info (10041): Inferred latch for "mem_out_2[12]" at Memory.vhd(27) File: /home/pranjal/CS232/Superscalar/Memory.vhd Line: 27
-Info (10041): Inferred latch for "mem_out_2[13]" at Memory.vhd(27) File: /home/pranjal/CS232/Superscalar/Memory.vhd Line: 27
-Info (10041): Inferred latch for "mem_out_2[14]" at Memory.vhd(27) File: /home/pranjal/CS232/Superscalar/Memory.vhd Line: 27
-Info (10041): Inferred latch for "mem_out_2[15]" at Memory.vhd(27) File: /home/pranjal/CS232/Superscalar/Memory.vhd Line: 27
-Info (10041): Inferred latch for "mem_out_1[0]" at Memory.vhd(27) File: /home/pranjal/CS232/Superscalar/Memory.vhd Line: 27
-Info (10041): Inferred latch for "mem_out_1[1]" at Memory.vhd(27) File: /home/pranjal/CS232/Superscalar/Memory.vhd Line: 27
-Info (10041): Inferred latch for "mem_out_1[2]" at Memory.vhd(27) File: /home/pranjal/CS232/Superscalar/Memory.vhd Line: 27
-Info (10041): Inferred latch for "mem_out_1[3]" at Memory.vhd(27) File: /home/pranjal/CS232/Superscalar/Memory.vhd Line: 27
-Info (10041): Inferred latch for "mem_out_1[4]" at Memory.vhd(27) File: /home/pranjal/CS232/Superscalar/Memory.vhd Line: 27
-Info (10041): Inferred latch for "mem_out_1[5]" at Memory.vhd(27) File: /home/pranjal/CS232/Superscalar/Memory.vhd Line: 27
-Info (10041): Inferred latch for "mem_out_1[6]" at Memory.vhd(27) File: /home/pranjal/CS232/Superscalar/Memory.vhd Line: 27
-Info (10041): Inferred latch for "mem_out_1[7]" at Memory.vhd(27) File: /home/pranjal/CS232/Superscalar/Memory.vhd Line: 27
-Info (10041): Inferred latch for "mem_out_1[8]" at Memory.vhd(27) File: /home/pranjal/CS232/Superscalar/Memory.vhd Line: 27
-Info (10041): Inferred latch for "mem_out_1[9]" at Memory.vhd(27) File: /home/pranjal/CS232/Superscalar/Memory.vhd Line: 27
-Info (10041): Inferred latch for "mem_out_1[10]" at Memory.vhd(27) File: /home/pranjal/CS232/Superscalar/Memory.vhd Line: 27
-Info (10041): Inferred latch for "mem_out_1[11]" at Memory.vhd(27) File: /home/pranjal/CS232/Superscalar/Memory.vhd Line: 27
-Info (10041): Inferred latch for "mem_out_1[12]" at Memory.vhd(27) File: /home/pranjal/CS232/Superscalar/Memory.vhd Line: 27
-Info (10041): Inferred latch for "mem_out_1[13]" at Memory.vhd(27) File: /home/pranjal/CS232/Superscalar/Memory.vhd Line: 27
-Info (10041): Inferred latch for "mem_out_1[14]" at Memory.vhd(27) File: /home/pranjal/CS232/Superscalar/Memory.vhd Line: 27
-Info (10041): Inferred latch for "mem_out_1[15]" at Memory.vhd(27) File: /home/pranjal/CS232/Superscalar/Memory.vhd Line: 27
-Info (12128): Elaborating entity "Fetch" for hierarchy "Fetch:fetch_Component" File: /home/pranjal/CS232/Superscalar/Superscalar.vhd Line: 186
-Info (12128): Elaborating entity "regFile" for hierarchy "regFile:RF_component" File: /home/pranjal/CS232/Superscalar/Superscalar.vhd Line: 189
-Warning (10036): Verilog HDL or VHDL warning at Regfile.vhd(54): object "write_value" assigned a value but never read File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 54
-Warning (10492): VHDL Process Statement warning at Regfile.vhd(73): signal "regs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 73
-Warning (10492): VHDL Process Statement warning at Regfile.vhd(74): signal "regs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 74
-Warning (10492): VHDL Process Statement warning at Regfile.vhd(75): signal "regs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 75
-Warning (10492): VHDL Process Statement warning at Regfile.vhd(76): signal "regs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 76
-Warning (10492): VHDL Process Statement warning at Regfile.vhd(82): signal "reg_map" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 82
-Warning (10492): VHDL Process Statement warning at Regfile.vhd(91): signal "regs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 91
-Warning (10492): VHDL Process Statement warning at Regfile.vhd(92): signal "regs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 92
-Warning (10492): VHDL Process Statement warning at Regfile.vhd(93): signal "regs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 93
-Warning (10492): VHDL Process Statement warning at Regfile.vhd(94): signal "regs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 94
-Warning (10492): VHDL Process Statement warning at Regfile.vhd(100): signal "regs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 100
-Warning (10492): VHDL Process Statement warning at Regfile.vhd(103): signal "reg_map" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 103
-Warning (10027): Verilog HDL or VHDL warning at the Regfile.vhd(103): index expression is not wide enough to address all of the elements in the array File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 103
-Warning (10492): VHDL Process Statement warning at Regfile.vhd(108): signal "reg_map" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 108
-Warning (10631): VHDL Process Statement warning at Regfile.vhd(62): inferring latch(es) for signal or variable "reg_val_1", which holds its previous value in one or more paths through the process File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Warning (10631): VHDL Process Statement warning at Regfile.vhd(62): inferring latch(es) for signal or variable "reg_val_2", which holds its previous value in one or more paths through the process File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Warning (10631): VHDL Process Statement warning at Regfile.vhd(62): inferring latch(es) for signal or variable "reg_val_3", which holds its previous value in one or more paths through the process File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Warning (10631): VHDL Process Statement warning at Regfile.vhd(62): inferring latch(es) for signal or variable "reg_val_4", which holds its previous value in one or more paths through the process File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Warning (10631): VHDL Process Statement warning at Regfile.vhd(62): inferring latch(es) for signal or variable "write_reg", which holds its previous value in one or more paths through the process File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Warning (10631): VHDL Process Statement warning at Regfile.vhd(62): inferring latch(es) for signal or variable "reg_map", which holds its previous value in one or more paths through the process File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Warning (10631): VHDL Process Statement warning at Regfile.vhd(62): inferring latch(es) for signal or variable "mapped_reg", which holds its previous value in one or more paths through the process File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "mapped_reg[0]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "mapped_reg[1]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "mapped_reg[2]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "mapped_reg[3]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "mapped_reg[4]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "mapped_reg[5]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "mapped_reg[6]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "mapped_reg[7]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "mapped_reg[8]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "mapped_reg[9]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "mapped_reg[10]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "mapped_reg[11]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "mapped_reg[12]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "mapped_reg[13]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "mapped_reg[14]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "mapped_reg[15]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "mapped_reg[16]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "mapped_reg[17]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "mapped_reg[18]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "mapped_reg[19]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "mapped_reg[20]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "mapped_reg[21]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "mapped_reg[22]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "mapped_reg[23]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "mapped_reg[24]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "mapped_reg[25]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "mapped_reg[26]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "mapped_reg[27]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "mapped_reg[28]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "mapped_reg[29]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "mapped_reg[30]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "mapped_reg[31]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[23][0]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[23][1]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[23][2]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[23][3]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[23][4]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[23][5]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[22][0]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[22][1]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[22][2]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[22][3]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[22][4]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[22][5]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[21][0]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[21][1]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[21][2]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[21][3]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[21][4]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[21][5]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[20][0]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[20][1]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[20][2]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[20][3]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[20][4]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[20][5]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[19][0]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[19][1]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[19][2]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[19][3]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[19][4]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[19][5]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[18][0]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[18][1]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[18][2]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[18][3]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[18][4]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[18][5]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[17][0]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[17][1]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[17][2]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[17][3]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[17][4]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[17][5]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[16][0]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[16][1]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[16][2]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[16][3]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[16][4]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[16][5]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[15][0]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[15][1]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[15][2]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[15][3]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[15][4]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[15][5]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[14][0]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[14][1]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[14][2]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[14][3]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[14][4]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[14][5]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[13][0]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[13][1]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[13][2]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[13][3]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[13][4]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[13][5]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[12][0]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[12][1]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[12][2]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[12][3]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[12][4]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[12][5]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[11][0]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[11][1]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[11][2]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[11][3]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[11][4]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[11][5]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[10][0]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[10][1]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[10][2]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[10][3]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[10][4]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[10][5]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[9][0]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[9][1]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[9][2]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[9][3]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[9][4]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[9][5]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[8][0]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[8][1]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[8][2]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[8][3]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[8][4]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[8][5]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[7][0]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[7][1]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[7][2]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[7][3]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[7][4]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[7][5]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[6][0]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[6][1]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[6][2]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[6][3]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[6][4]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[6][5]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[5][0]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[5][1]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[5][2]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[5][3]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[5][4]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[5][5]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[4][0]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[4][1]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[4][2]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[4][3]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[4][4]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[4][5]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[3][0]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[3][1]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[3][2]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[3][3]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[3][4]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[3][5]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[2][0]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[2][1]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[2][2]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[2][3]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[2][4]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[2][5]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[1][0]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[1][1]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[1][2]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[1][3]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[1][4]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[1][5]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[0][0]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[0][1]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[0][2]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[0][3]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[0][4]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_map[0][5]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "write_reg[31]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "write_reg[30]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "write_reg[29]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "write_reg[28]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "write_reg[27]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "write_reg[26]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "write_reg[25]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "write_reg[24]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "write_reg[23]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "write_reg[22]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "write_reg[21]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "write_reg[20]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "write_reg[19]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "write_reg[18]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "write_reg[17]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "write_reg[16]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "write_reg[15]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "write_reg[14]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "write_reg[13]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "write_reg[12]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "write_reg[11]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "write_reg[10]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "write_reg[9]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "write_reg[8]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "write_reg[7]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "write_reg[6]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "write_reg[5]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "write_reg[4]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "write_reg[3]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "write_reg[2]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "write_reg[1]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "write_reg[0]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_val_4[0]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_val_4[1]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_val_4[2]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_val_4[3]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_val_4[4]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_val_4[5]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_val_4[6]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_val_4[7]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_val_4[8]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_val_4[9]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_val_4[10]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_val_4[11]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_val_4[12]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_val_4[13]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_val_4[14]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_val_4[15]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_val_3[0]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_val_3[1]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_val_3[2]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_val_3[3]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_val_3[4]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_val_3[5]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_val_3[6]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_val_3[7]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_val_3[8]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_val_3[9]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_val_3[10]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_val_3[11]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_val_3[12]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_val_3[13]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_val_3[14]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_val_3[15]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_val_2[0]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_val_2[1]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_val_2[2]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_val_2[3]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_val_2[4]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_val_2[5]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_val_2[6]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_val_2[7]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_val_2[8]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_val_2[9]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_val_2[10]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_val_2[11]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_val_2[12]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_val_2[13]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_val_2[14]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_val_2[15]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_val_1[0]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_val_1[1]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_val_1[2]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_val_1[3]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_val_1[4]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_val_1[5]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_val_1[6]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_val_1[7]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_val_1[8]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_val_1[9]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_val_1[10]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_val_1[11]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_val_1[12]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_val_1[13]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_val_1[14]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (10041): Inferred latch for "reg_val_1[15]" at Regfile.vhd(62) File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 62
-Info (12128): Elaborating entity "reg" for hierarchy "regFile:RF_component|reg:\make_regs:0:R" File: /home/pranjal/CS232/Superscalar/Regfile.vhd Line: 58
-Warning (10631): VHDL Process Statement warning at Reg.vhd(15): inferring latch(es) for signal or variable "out_data", which holds its previous value in one or more paths through the process File: /home/pranjal/CS232/Superscalar/Reg.vhd Line: 15
-Info (10041): Inferred latch for "out_data[0]" at Reg.vhd(15) File: /home/pranjal/CS232/Superscalar/Reg.vhd Line: 15
-Info (10041): Inferred latch for "out_data[1]" at Reg.vhd(15) File: /home/pranjal/CS232/Superscalar/Reg.vhd Line: 15
-Info (10041): Inferred latch for "out_data[2]" at Reg.vhd(15) File: /home/pranjal/CS232/Superscalar/Reg.vhd Line: 15
-Info (10041): Inferred latch for "out_data[3]" at Reg.vhd(15) File: /home/pranjal/CS232/Superscalar/Reg.vhd Line: 15
-Info (10041): Inferred latch for "out_data[4]" at Reg.vhd(15) File: /home/pranjal/CS232/Superscalar/Reg.vhd Line: 15
-Info (10041): Inferred latch for "out_data[5]" at Reg.vhd(15) File: /home/pranjal/CS232/Superscalar/Reg.vhd Line: 15
-Info (10041): Inferred latch for "out_data[6]" at Reg.vhd(15) File: /home/pranjal/CS232/Superscalar/Reg.vhd Line: 15
-Info (10041): Inferred latch for "out_data[7]" at Reg.vhd(15) File: /home/pranjal/CS232/Superscalar/Reg.vhd Line: 15
-Info (10041): Inferred latch for "out_data[8]" at Reg.vhd(15) File: /home/pranjal/CS232/Superscalar/Reg.vhd Line: 15
-Info (10041): Inferred latch for "out_data[9]" at Reg.vhd(15) File: /home/pranjal/CS232/Superscalar/Reg.vhd Line: 15
-Info (10041): Inferred latch for "out_data[10]" at Reg.vhd(15) File: /home/pranjal/CS232/Superscalar/Reg.vhd Line: 15
-Info (10041): Inferred latch for "out_data[11]" at Reg.vhd(15) File: /home/pranjal/CS232/Superscalar/Reg.vhd Line: 15
-Info (10041): Inferred latch for "out_data[12]" at Reg.vhd(15) File: /home/pranjal/CS232/Superscalar/Reg.vhd Line: 15
-Info (10041): Inferred latch for "out_data[13]" at Reg.vhd(15) File: /home/pranjal/CS232/Superscalar/Reg.vhd Line: 15
-Info (10041): Inferred latch for "out_data[14]" at Reg.vhd(15) File: /home/pranjal/CS232/Superscalar/Reg.vhd Line: 15
-Info (10041): Inferred latch for "out_data[15]" at Reg.vhd(15) File: /home/pranjal/CS232/Superscalar/Reg.vhd Line: 15
-Info (12128): Elaborating entity "Decode" for hierarchy "Decode:Decode_comp" File: /home/pranjal/CS232/Superscalar/Superscalar.vhd Line: 192
-Warning (10541): VHDL Signal Declaration warning at Decode.vhd(29): used implicit default value for signal "ins_1" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/pranjal/CS232/Superscalar/Decode.vhd Line: 29
-Warning (10541): VHDL Signal Declaration warning at Decode.vhd(30): used implicit default value for signal "ins_2" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/pranjal/CS232/Superscalar/Decode.vhd Line: 30
-Warning (10541): VHDL Signal Declaration warning at Decode.vhd(51): used implicit default value for signal "pc_ins_1" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/pranjal/CS232/Superscalar/Decode.vhd Line: 51
-Warning (10541): VHDL Signal Declaration warning at Decode.vhd(52): used implicit default value for signal "pc_ins_2" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/pranjal/CS232/Superscalar/Decode.vhd Line: 52
-Warning (10492): VHDL Process Statement warning at Decode.vhd(60): signal "loading_mem" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/pranjal/CS232/Superscalar/Decode.vhd Line: 60
-Warning (21074): Design contains 25 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "clk" File: /home/pranjal/CS232/Superscalar/Superscalar.vhd Line: 8
-    Warning (15610): No output dependent on input pin "rst" File: /home/pranjal/CS232/Superscalar/Superscalar.vhd Line: 8
-    Warning (15610): No output dependent on input pin "data_loading" File: /home/pranjal/CS232/Superscalar/Superscalar.vhd Line: 10
-    Warning (15610): No output dependent on input pin "data_mem_address[0]" File: /home/pranjal/CS232/Superscalar/Superscalar.vhd Line: 11
-    Warning (15610): No output dependent on input pin "data_mem_address[1]" File: /home/pranjal/CS232/Superscalar/Superscalar.vhd Line: 11
-    Warning (15610): No output dependent on input pin "data_mem_address[2]" File: /home/pranjal/CS232/Superscalar/Superscalar.vhd Line: 11
-    Warning (15610): No output dependent on input pin "data_mem_address[3]" File: /home/pranjal/CS232/Superscalar/Superscalar.vhd Line: 11
-    Warning (15610): No output dependent on input pin "data_mem_address[4]" File: /home/pranjal/CS232/Superscalar/Superscalar.vhd Line: 11
-    Warning (15610): No output dependent on input pin "data_mem_address[5]" File: /home/pranjal/CS232/Superscalar/Superscalar.vhd Line: 11
-    Warning (15610): No output dependent on input pin "data[0]" File: /home/pranjal/CS232/Superscalar/Superscalar.vhd Line: 12
-    Warning (15610): No output dependent on input pin "data[1]" File: /home/pranjal/CS232/Superscalar/Superscalar.vhd Line: 12
-    Warning (15610): No output dependent on input pin "data[2]" File: /home/pranjal/CS232/Superscalar/Superscalar.vhd Line: 12
-    Warning (15610): No output dependent on input pin "data[3]" File: /home/pranjal/CS232/Superscalar/Superscalar.vhd Line: 12
-    Warning (15610): No output dependent on input pin "data[4]" File: /home/pranjal/CS232/Superscalar/Superscalar.vhd Line: 12
-    Warning (15610): No output dependent on input pin "data[5]" File: /home/pranjal/CS232/Superscalar/Superscalar.vhd Line: 12
-    Warning (15610): No output dependent on input pin "data[6]" File: /home/pranjal/CS232/Superscalar/Superscalar.vhd Line: 12
-    Warning (15610): No output dependent on input pin "data[7]" File: /home/pranjal/CS232/Superscalar/Superscalar.vhd Line: 12
-    Warning (15610): No output dependent on input pin "data[8]" File: /home/pranjal/CS232/Superscalar/Superscalar.vhd Line: 12
-    Warning (15610): No output dependent on input pin "data[9]" File: /home/pranjal/CS232/Superscalar/Superscalar.vhd Line: 12
-    Warning (15610): No output dependent on input pin "data[10]" File: /home/pranjal/CS232/Superscalar/Superscalar.vhd Line: 12
-    Warning (15610): No output dependent on input pin "data[11]" File: /home/pranjal/CS232/Superscalar/Superscalar.vhd Line: 12
-    Warning (15610): No output dependent on input pin "data[12]" File: /home/pranjal/CS232/Superscalar/Superscalar.vhd Line: 12
-    Warning (15610): No output dependent on input pin "data[13]" File: /home/pranjal/CS232/Superscalar/Superscalar.vhd Line: 12
-    Warning (15610): No output dependent on input pin "data[14]" File: /home/pranjal/CS232/Superscalar/Superscalar.vhd Line: 12
-    Warning (15610): No output dependent on input pin "data[15]" File: /home/pranjal/CS232/Superscalar/Superscalar.vhd Line: 12
-Info (21057): Implemented 25 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 25 input pins
-    Info (21059): Implemented 0 output pins
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 85 warnings
-    Info: Peak virtual memory: 403 megabytes
-    Info: Processing ended: Mon Dec  5 16:55:09 2022
-    Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:18
+Info (12021): Found 2 design units, including 1 entities, in source file Res.vhd
+    Info (12022): Found design unit 1: Res-res_arch File: /home/pranjal/CS232/Superscalar/Res.vhd Line: 40
+    Info (12023): Found entity 1: Res File: /home/pranjal/CS232/Superscalar/Res.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file Write_back.vhd
+    Info (12022): Found design unit 1: Commit-writeRf File: /home/pranjal/CS232/Superscalar/Write_back.vhd Line: 30
+    Info (12023): Found entity 1: Commit File: /home/pranjal/CS232/Superscalar/Write_back.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file ROB.vhd
+    Info (12022): Found design unit 1: rob-rob File: /home/pranjal/CS232/Superscalar/ROB.vhd Line: 31
+    Info (12023): Found entity 1: rob File: /home/pranjal/CS232/Superscalar/ROB.vhd Line: 8
+Error (10500): VHDL syntax error at Exec.vhd(51) near text "port";  expecting "(", or "'", or "." File: /home/pranjal/CS232/Superscalar/Exec.vhd Line: 51
+Error (10500): VHDL syntax error at Exec.vhd(51) near text ";";  expecting ":=", or "<=" File: /home/pranjal/CS232/Superscalar/Exec.vhd Line: 51
+Error (10500): VHDL syntax error at Exec.vhd(58) near text "port";  expecting "(", or "'", or "." File: /home/pranjal/CS232/Superscalar/Exec.vhd Line: 58
+Error (10500): VHDL syntax error at Exec.vhd(58) near text ";";  expecting ":=", or "<=" File: /home/pranjal/CS232/Superscalar/Exec.vhd Line: 58
+Error (10500): VHDL syntax error at Exec.vhd(63) near text "port";  expecting "(", or "'", or "." File: /home/pranjal/CS232/Superscalar/Exec.vhd Line: 63
+Error (10500): VHDL syntax error at Exec.vhd(63) near text ";";  expecting ":=", or "<=" File: /home/pranjal/CS232/Superscalar/Exec.vhd Line: 63
+Error (10500): VHDL syntax error at Exec.vhd(78) near text "port";  expecting "(", or "'", or "." File: /home/pranjal/CS232/Superscalar/Exec.vhd Line: 78
+Error (10500): VHDL syntax error at Exec.vhd(78) near text ";";  expecting ":=", or "<=" File: /home/pranjal/CS232/Superscalar/Exec.vhd Line: 78
+Error (10500): VHDL syntax error at Exec.vhd(84) near text "port";  expecting "(", or "'", or "." File: /home/pranjal/CS232/Superscalar/Exec.vhd Line: 84
+Error (10500): VHDL syntax error at Exec.vhd(84) near text ";";  expecting ":=", or "<=" File: /home/pranjal/CS232/Superscalar/Exec.vhd Line: 84
+Error (10500): VHDL syntax error at Exec.vhd(89) near text "port";  expecting "(", or "'", or "." File: /home/pranjal/CS232/Superscalar/Exec.vhd Line: 89
+Error (10500): VHDL syntax error at Exec.vhd(89) near text ";";  expecting ":=", or "<=" File: /home/pranjal/CS232/Superscalar/Exec.vhd Line: 89
+Error (10500): VHDL syntax error at Exec.vhd(107) near text "port";  expecting "(", or "'", or "." File: /home/pranjal/CS232/Superscalar/Exec.vhd Line: 107
+Error (10500): VHDL syntax error at Exec.vhd(107) near text ";";  expecting ":=", or "<=" File: /home/pranjal/CS232/Superscalar/Exec.vhd Line: 107
+Error (10500): VHDL syntax error at Exec.vhd(113) near text "port";  expecting "(", or "'", or "." File: /home/pranjal/CS232/Superscalar/Exec.vhd Line: 113
+Error (10500): VHDL syntax error at Exec.vhd(113) near text ";";  expecting ":=", or "<=" File: /home/pranjal/CS232/Superscalar/Exec.vhd Line: 113
+Error (10500): VHDL syntax error at Exec.vhd(118) near text "port";  expecting "(", or "'", or "." File: /home/pranjal/CS232/Superscalar/Exec.vhd Line: 118
+Error (10500): VHDL syntax error at Exec.vhd(118) near text ";";  expecting ":=", or "<=" File: /home/pranjal/CS232/Superscalar/Exec.vhd Line: 118
+Error (10500): VHDL syntax error at Exec.vhd(131) near text "port";  expecting "(", or "'", or "." File: /home/pranjal/CS232/Superscalar/Exec.vhd Line: 131
+Info (12021): Found 0 design units, including 0 entities, in source file Exec.vhd
+Info (12021): Found 2 design units, including 1 entities, in source file Alu.vhd
+    Info (12022): Found design unit 1: ALU-ALU_arch File: /home/pranjal/CS232/Superscalar/Alu.vhd Line: 11
+    Info (12023): Found entity 1: ALU File: /home/pranjal/CS232/Superscalar/Alu.vhd Line: 4
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 19 errors, 1 warning
+    Error: Peak virtual memory: 396 megabytes
+    Error: Processing ended: Fri Dec  9 00:31:07 2022
+    Error: Elapsed time: 00:00:07
+    Error: Total CPU time (on all processors): 00:00:16
 
 
